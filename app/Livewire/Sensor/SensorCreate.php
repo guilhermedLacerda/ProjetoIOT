@@ -19,7 +19,6 @@ class SensorCreate extends Component
         'ambiente' => 'required|integer',
         'codigo' => 'required|string|unique:sensors,codigo',
         'tipo' =>   'required|string',
-        'descricao' => 'required',
         'status' => 'boolean'
     ]; 
 
@@ -31,8 +30,7 @@ class SensorCreate extends Component
         'codigo.unique' => 'Codigo já cadastrado.',
         'tipo.required' => 'Este campo é obrigatório.',
         'tipo.string' => 'O campo tipo deve ser um texto valido.',
-        'descricao.required' => 'Este campo é obrigatório.',
-        'status.boolean' => 'Apenas os valores true ou false'
+        'status.boolean' => 'Determine o Status do Sensor'
     ];
 
     public function store() {
@@ -53,6 +51,7 @@ class SensorCreate extends Component
             ]);
 
             session()->flash('message', 'Sensor criado com sucesso');
+            $this->reset(['ambiente', 'codigo', 'tipo', 'descricao', 'status']);
         }
 
     public function render()

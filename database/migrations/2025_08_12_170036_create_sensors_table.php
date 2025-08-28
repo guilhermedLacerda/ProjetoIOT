@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('ambiente_id')->constrained('ambientes')->onDelete('cascade');
             $table->string('codigo')->unique();
             $table->string('tipo')->nullable(false);
-            $table->string('descricao')->nullable();
+            $table->text('descricao')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
