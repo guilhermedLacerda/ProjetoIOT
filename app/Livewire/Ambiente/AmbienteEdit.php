@@ -13,9 +13,23 @@ class AmbienteEdit extends Component
     public $ambiente;
     public $ambienteId;
 
-    public function mount($id){
+    public function rules()
+    {
+        return [
+            'nome' => 'required',
+            'status' => 'boolean'
+        ];
+    }
+
+    protected $messages = [
+        'nome.required' => 'Campo Nome é Obrigatório',
+        'status.boolean' => 'Determine o Status do Sensor'
+    ];
+
+    public function mount($id)
+    {
         $ambiente = Ambiente::find($id);
-        if($ambiente == null) {
+        if ($ambiente == null) {
             session()->flash('error', 'ID de ambiente nao encontrado');
         } else {
             $this->ambienteId = $ambiente->id;
@@ -25,7 +39,8 @@ class AmbienteEdit extends Component
         }
     }
 
-    public function update(){
+    public function update()
+    {
         $this->validate();
 
         $ambiente = Ambiente::find($this->ambienteId);
@@ -37,6 +52,7 @@ class AmbienteEdit extends Component
         ]);
 
         session()->flash('message', 'Ambiente atualizado com sucesso');
+        return redirect()->route('ambiente.list');
     }
 
 

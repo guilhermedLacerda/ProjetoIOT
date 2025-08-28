@@ -11,8 +11,18 @@ class AmbienteCreate extends Component
     public $descricao;
     public $status;
 
+      protected $rules = [
+        'nome' => 'required',
+        'status' => 'boolean',
+    ]; 
+
+     protected $messages = [
+        'nome.required' => 'Campo Nome é Obrigatório',
+        'status.boolean' => 'Determine o Status do Sensor'
+    ];
+
     public function store() {
-       
+       $this->validate();
 
         Ambiente::create([
             'nome' => $this->nome,

@@ -19,7 +19,7 @@
 
                 <div class="mb-3">
                     <label for="descricao" class="form-label">descricao</label>
-                    <input type="text" class="form-control" id="descricao" placeholder="Descreva o Ambiente" wire:model.defer="descricao">
+                    <input type="text" class="form-control" id="descricao" placeholder="Descreva o Ambiente (Opcional)" wire:model.defer="descricao">
                     @error('descricao') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
 
@@ -31,7 +31,8 @@
                         <option value="1">ativo</option>
                         <option value="0">inativo</option>
                     </select>
-                    
+                    @error('status') <span class="text-danger">{{ $message }}</span> @enderror
+                </div>
 
                 <div class="mb-3 d-flex justify-content-center">
                     <button type="submit" class="btn btn-dark w-75 p-3">Cadastrar</button>

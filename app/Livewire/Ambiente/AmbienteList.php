@@ -13,11 +13,11 @@ class AmbienteList extends Component
     protected $paginationTheme = 'bootstrap';
 
     public $search = '';
-    public $perPage = 10;
+    public $perPage = 15;
 
     protected $queryString = [
         'search' => ['except' => ''],
-        'perPage' => ['except' => 10]
+        'perPage' => ['except' => 15]
     ];
 
 

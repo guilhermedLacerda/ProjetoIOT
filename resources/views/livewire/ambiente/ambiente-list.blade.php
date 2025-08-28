@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-md-3 mt-1">
                                 <select wire:model.live="perPage" class="form-select">
-                                    <option value="10">10 por página</option>
+                                    <option value="15">15 por página</option>
                                     <option value="25">25 por página</option>
                                     <option value="50">50 por página</option>
                                     <option value="100">100 por página</option>
@@ -42,8 +42,8 @@
                         <td>{{ $ambiente->descricao }}</td>
                         <td>{{ $ambiente->status }}</td>
                         <td>
-                            {{-- <a href="{{ route('funcionario.edit', $ambiente->id) }}" class="btn btn-sm btn-warning">Editar</a> --}}
-                            {{-- <a href="{{ route('funcionario.delete', $ambiente->id) }}" class="btn btn-sm btn-danger">Excluir</a> --}}
+                            <a href="{{ route('ambiente.edit', $ambiente->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="{{ route('ambiente.delete', $ambiente->id) }}" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                     @endforeach
