@@ -5,7 +5,6 @@ use App\Livewire\Ambiente\AmbienteCreate;
 use App\Livewire\Ambiente\AmbienteDelete;
 use App\Livewire\Ambiente\AmbienteEdit;
 use App\Livewire\Ambiente\AmbienteList;
-use App\Models\Ambiente;
 use Illuminate\Support\Facades\Route;
 
 Route::get('ambiente/create', AmbienteCreate::class)->name('ambiente.create');
@@ -14,9 +13,7 @@ Route::get('ambiente/list', AmbienteList::class)->name('ambiente.list');
 Route::get('ambiente/{id}/delete', AmbienteDelete::class)->name('ambiente.delete'); 
 
 use App\Livewire\Dashboard;
-
 use App\Livewire\Registro\RegistroList;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', Dashboard::class);
 Route::get('/registro/list', RegistroList::class)->name('registro.list');
@@ -25,8 +22,6 @@ use App\Livewire\Sensor\SensorCreate;
 use App\Livewire\Sensor\SensorDelete;
 use App\Livewire\Sensor\SensorEdit;
 use App\Livewire\Sensor\SensorList;
-use App\Models\Sensor;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', Dashboard::class);
 Route::get('/sensor/create', SensorCreate::class)->name('sensor.create');
