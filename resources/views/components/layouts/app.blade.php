@@ -9,7 +9,6 @@
         @livewireStyles
     </head>
     <body>
-        {{ $slot }}
 
 
         
