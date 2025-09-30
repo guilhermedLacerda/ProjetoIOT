@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
            AmbienteSeeder::class,
            SensorSeeder::class,
            RegistroSeeder::class,
+
         ]);
     }
 }
