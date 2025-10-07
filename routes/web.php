@@ -14,6 +14,4 @@ Route::get('ambiente/list', AmbienteList::class)->name('ambiente.list');
 Route::get('ambiente/{id}/delete', AmbienteDelete::class)->name('ambiente.delete'); 
 
 use App\Livewire\Dashboard;
-use Illuminate\Support\Facades\Route;
-
 Route::get('/', Dashboard::class);
