@@ -20,6 +20,18 @@ class SensorList extends Component
         'search' => ['except' => ''],
         'perPage' => ['except' => 15]
     ];
+    
+       public function BotaoLed(int $sensorId)
+    {
+        $sensor = Sensor::findOrFail($sensorId);
+        $alterarStatus = $sensor->status == 1 ? 0 : 1;
+
+        $sensor->status = $alterarStatus;
+        $sensor->save();
+
+        session()->flash('message', 'Status do Sensor ' . $sensor->codigo . ' atualizado para: ' . ($alterarStatus == 1 ? 'Ligado' : 'Desligado'));
+    }
+
 
 
     public function render()

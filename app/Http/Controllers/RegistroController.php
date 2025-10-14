@@ -17,7 +17,6 @@ class RegistroController extends Controller
             return response()->json(['error' => 'sensor nao encontrado'], 404);
         }
 
-
         $registro = Registro::create([
             'sensor_id' => $sensor->id,
             'valor' => $request->valor,

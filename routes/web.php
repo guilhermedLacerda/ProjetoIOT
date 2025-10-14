@@ -14,6 +14,7 @@ Route::get('ambiente/{id}/delete', AmbienteDelete::class)->name('ambiente.delete
 
 use App\Livewire\Dashboard;
 use App\Livewire\Registro\RegistroList;
+use App\Livewire\Sensor\BotaoLed;
 
 Route::get('/', Dashboard::class);
 Route::get('/registro/list', RegistroList::class)->name('registro.list');
