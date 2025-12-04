@@ -33,7 +33,7 @@ class Login extends Component
             return redirect()->route('dashboard');
         }
 
-
+        
 
         session()->flash('error', 'Email ou senha incorretos');
     }
