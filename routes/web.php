@@ -5,6 +5,7 @@ use App\Livewire\Ambiente\AmbienteCreate;
 use App\Livewire\Ambiente\AmbienteDelete;
 use App\Livewire\Ambiente\AmbienteEdit;
 use App\Livewire\Ambiente\AmbienteList;
+use App\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
 
 Route::get('ambiente/create', AmbienteCreate::class)->name('ambiente.create');
@@ -29,4 +30,8 @@ Route::get('/sensor/create', SensorCreate::class)->name('sensor.create');
 Route::get('/sensor/{id}/edit', SensorEdit::class)->name('sensor.edit');
 Route::get('/sensor/list', SensorList::class)->name('sensor.list');
 Route::get('/sensor/{id}/delete', SensorDelete::class)->name('sensor.delete');
+
+Route::get('login', Login::class)->name('login');
+Route::get('dashboard', Dashboard::class)->middleware('auth')->name('dashboard');
+
 
