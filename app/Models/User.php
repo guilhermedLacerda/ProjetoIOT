@@ -44,4 +44,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+       public function ambiente()
+    {
+        return $this->hasOne(Ambiente::class);
+    }
+
+       public function registro()
+    {
+        return $this->hasOne(Registro::class);
+    }
+
+       public function sensor()
+    {
+        return $this->hasOne(Sensor::class);
+    }
 }

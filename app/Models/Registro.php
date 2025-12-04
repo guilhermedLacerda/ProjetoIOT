@@ -23,4 +23,8 @@ class Registro extends Model
     public function sensor(){
         return $this->belongsTo(Sensor::class);
     }
+       public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
